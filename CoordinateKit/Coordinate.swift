@@ -1,5 +1,5 @@
 //
-//  CoordinateKit.h
+//  Coordinate.swift
 //  CoordinateKit
 //
 //  The MIT License (MIT)
@@ -25,12 +25,20 @@
 //  SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
+import Foundation
 
-//! Project version number for CoordinateKit.
-FOUNDATION_EXPORT double CoordinateKitVersionNumber;
-
-//! Project version string for CoordinateKit.
-FOUNDATION_EXPORT const unsigned char CoordinateKitVersionString[];
-
-#import <CoordinateKit/deflator.h>
+public enum Coordinate {
+    
+    public static func deflate(latitude: Double, longitude: Double) -> UInt64 {
+        return _coordinateKitDeflateCoordinate(latitude, longitude)
+    }
+    
+    public static func inflate(_ compressedCoordinate: UInt64) -> (latitude: Double, longitude: Double) {
+        var lat: Double = 0
+        var lon: Double = 0
+        
+        _coordinateKitInflateCoordinate(compressedCoordinate, &lat, &lon)
+        
+        return (lat, lon)
+    }
+}

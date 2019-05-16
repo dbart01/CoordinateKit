@@ -1,5 +1,5 @@
 //
-//  CoordinateKit.h
+//  CoordinateDeflator.h
 //  CoordinateKit
 //
 //  The MIT License (MIT)
@@ -25,12 +25,10 @@
 //  SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
+#import <stdio.h>
+#import <stdlib.h>
+#import <string.h>
+#import <math.h>
 
-//! Project version number for CoordinateKit.
-FOUNDATION_EXPORT double CoordinateKitVersionNumber;
-
-//! Project version string for CoordinateKit.
-FOUNDATION_EXPORT const unsigned char CoordinateKitVersionString[];
-
-#import <CoordinateKit/deflator.h>
+uint64_t _coordinateKitDeflateCoordinate(double latitude, double longitude);
+void _coordinateKitInflateCoordinate(uint64_t compressedCoordinate, double *latitude, double *longitude);

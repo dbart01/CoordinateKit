@@ -1,5 +1,5 @@
 //
-//  CoordinateKit.h
+//  Coordinate+CoreLocation.swift
 //  CoordinateKit
 //
 //  The MIT License (MIT)
@@ -25,12 +25,35 @@
 //  SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
+#if canImport(CoreLocation)
 
-//! Project version number for CoordinateKit.
-FOUNDATION_EXPORT double CoordinateKitVersionNumber;
+import CoreLocation
 
-//! Project version string for CoordinateKit.
-FOUNDATION_EXPORT const unsigned char CoordinateKitVersionString[];
+// MARK: - Single -
 
-#import <CoordinateKit/deflator.h>
+extension Coordinate {
+    
+    public static func deflate(coordinate: CLLocationCoordinate2D) -> UInt64 {
+        return self.deflate(latitude: coordinate.latitude, longitude: coordinate.longitude)
+    }
+    
+    public static func inflate(coordinate: UInt64) -> CLLocationCoordinate2D {
+        let (lat, lon) = self.inflate(coordinate)
+        return CLLocationCoordinate2D(latitude: lat, longitude: lon)
+    }
+}
+
+// MARK: - Collection -
+
+extension Coordinate {
+    
+    public static func deflate(coordinates: [CLLocationCoordinate2D]) -> [UInt64] {
+        return coordinates.map { self.deflate(coordinate: $0) }
+    }
+    
+    public static func inflate(coordinates: [UInt64]) -> [CLLocationCoordinate2D] {
+        return coordinates.map { self.inflate(coordinate: $0) }
+    }
+}
+
+#endif

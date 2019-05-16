@@ -1,6 +1,6 @@
 //
-//  CoordinateKit.h
-//  CoordinateKit
+//  CoordinateTests.swift
+//  CoordinateKitTests
 //
 //  The MIT License (MIT)
 //
@@ -25,12 +25,28 @@
 //  SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
+import XCTest
+import CoordinateKit
 
-//! Project version number for CoordinateKit.
-FOUNDATION_EXPORT double CoordinateKitVersionNumber;
+class CoordinateTests: XCTestCase {
 
-//! Project version string for CoordinateKit.
-FOUNDATION_EXPORT const unsigned char CoordinateKitVersionString[];
-
-#import <CoordinateKit/deflator.h>
+    // MARK: - Deflate -
+    
+    func testDeflate() {
+        let latitude:  Double = 43.1234567
+        let longitude: Double = -79.8765432
+        
+        let value = Coordinate.deflate(latitude: latitude, longitude: longitude)
+        XCTAssertEqual(value, 9637694487388404589)
+    }
+    
+    // MARK: - Inflate -
+    
+    func testInflate() {
+        let value: UInt64 = 9637694487388404589
+        let (latitude, longitude) = Coordinate.inflate(value)
+        
+        XCTAssertEqual(latitude,   43.1234567, accuracy: 0.000001)
+        XCTAssertEqual(longitude, -79.8765432, accuracy: 0.000001)
+    }
+}

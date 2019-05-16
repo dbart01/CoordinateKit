@@ -8,8 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		9A57DD01228CA3020003BBEB /* CoordinateKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A57DCF7228CA3020003BBEB /* CoordinateKit.framework */; };
-		9A57DD06228CA3020003BBEB /* CoordinateKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A57DD05228CA3020003BBEB /* CoordinateKitTests.swift */; };
 		9A57DD08228CA3020003BBEB /* CoordinateKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A57DCFA228CA3020003BBEB /* CoordinateKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9A57DD13228CA3230003BBEB /* deflator.c in Sources */ = {isa = PBXBuildFile; fileRef = 9A57DD11228CA3230003BBEB /* deflator.c */; };
+		9A57DD14228CA3230003BBEB /* deflator.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A57DD12228CA3230003BBEB /* deflator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9A57DD1A228CA3EB0003BBEB /* Coordinate+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A57DD19228CA3EB0003BBEB /* Coordinate+Data.swift */; };
+		9A57DD1C228CAC0A0003BBEB /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A57DD1B228CAC0A0003BBEB /* Coordinate.swift */; };
+		9A57DD1E228CAC6D0003BBEB /* Coordinate+CoreLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A57DD1D228CAC6D0003BBEB /* Coordinate+CoreLocation.swift */; };
+		9A57DD20228D7AF70003BBEB /* CoordinateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A57DD1F228D7AF70003BBEB /* CoordinateTests.swift */; };
+		9A57DD22228D7BDE0003BBEB /* Coordinate+CoreLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A57DD21228D7BDE0003BBEB /* Coordinate+CoreLocationTests.swift */; };
+		9A57DD24228D7E640003BBEB /* Coordinate+DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A57DD23228D7E640003BBEB /* Coordinate+DataTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,8 +34,15 @@
 		9A57DCFA228CA3020003BBEB /* CoordinateKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoordinateKit.h; sourceTree = "<group>"; };
 		9A57DCFB228CA3020003BBEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A57DD00228CA3020003BBEB /* CoordinateKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoordinateKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A57DD05228CA3020003BBEB /* CoordinateKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateKitTests.swift; sourceTree = "<group>"; };
 		9A57DD07228CA3020003BBEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A57DD11228CA3230003BBEB /* deflator.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = deflator.c; sourceTree = "<group>"; };
+		9A57DD12228CA3230003BBEB /* deflator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = deflator.h; sourceTree = "<group>"; };
+		9A57DD19228CA3EB0003BBEB /* Coordinate+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Coordinate+Data.swift"; sourceTree = "<group>"; };
+		9A57DD1B228CAC0A0003BBEB /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		9A57DD1D228CAC6D0003BBEB /* Coordinate+CoreLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coordinate+CoreLocation.swift"; sourceTree = "<group>"; };
+		9A57DD1F228D7AF70003BBEB /* CoordinateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateTests.swift; sourceTree = "<group>"; };
+		9A57DD21228D7BDE0003BBEB /* Coordinate+CoreLocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coordinate+CoreLocationTests.swift"; sourceTree = "<group>"; };
+		9A57DD23228D7E640003BBEB /* Coordinate+DataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coordinate+DataTests.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +86,11 @@
 			isa = PBXGroup;
 			children = (
 				9A57DCFA228CA3020003BBEB /* CoordinateKit.h */,
+				9A57DD1B228CAC0A0003BBEB /* Coordinate.swift */,
+				9A57DD1D228CAC6D0003BBEB /* Coordinate+CoreLocation.swift */,
+				9A57DD19228CA3EB0003BBEB /* Coordinate+Data.swift */,
+				9A57DD12228CA3230003BBEB /* deflator.h */,
+				9A57DD11228CA3230003BBEB /* deflator.c */,
 				9A57DCFB228CA3020003BBEB /* Info.plist */,
 			);
 			path = CoordinateKit;
@@ -80,7 +99,9 @@
 		9A57DD04228CA3020003BBEB /* CoordinateKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				9A57DD05228CA3020003BBEB /* CoordinateKitTests.swift */,
+				9A57DD1F228D7AF70003BBEB /* CoordinateTests.swift */,
+				9A57DD21228D7BDE0003BBEB /* Coordinate+CoreLocationTests.swift */,
+				9A57DD23228D7E640003BBEB /* Coordinate+DataTests.swift */,
 				9A57DD07228CA3020003BBEB /* Info.plist */,
 			);
 			path = CoordinateKitTests;
@@ -94,6 +115,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A57DD08228CA3020003BBEB /* CoordinateKit.h in Headers */,
+				9A57DD14228CA3230003BBEB /* deflator.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +216,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A57DD1A228CA3EB0003BBEB /* Coordinate+Data.swift in Sources */,
+				9A57DD1E228CAC6D0003BBEB /* Coordinate+CoreLocation.swift in Sources */,
+				9A57DD13228CA3230003BBEB /* deflator.c in Sources */,
+				9A57DD1C228CAC0A0003BBEB /* Coordinate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +227,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A57DD06228CA3020003BBEB /* CoordinateKitTests.swift in Sources */,
+				9A57DD24228D7E640003BBEB /* Coordinate+DataTests.swift in Sources */,
+				9A57DD22228D7BDE0003BBEB /* Coordinate+CoreLocationTests.swift in Sources */,
+				9A57DD20228D7AF70003BBEB /* CoordinateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +419,7 @@
 		9A57DD0F228CA3020003BBEB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MK88G5Q6ZN;
 				INFOPLIST_FILE = CoordinateKitTests/Info.plist;
@@ -409,6 +438,7 @@
 		9A57DD10228CA3020003BBEB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MK88G5Q6ZN;
 				INFOPLIST_FILE = CoordinateKitTests/Info.plist;
