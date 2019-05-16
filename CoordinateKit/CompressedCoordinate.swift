@@ -1,5 +1,5 @@
 //
-//  Coordinate.swift
+//  CompressedCoordinate.swift
 //  CoordinateKit
 //
 //  The MIT License (MIT)
@@ -27,18 +27,4 @@
 
 import Foundation
 
-public enum Coordinate {
-    
-    public static func deflate(latitude: Double, longitude: Double) -> CompressedCoordinate {
-        return _coordinateKitDeflateCoordinate(latitude, longitude)
-    }
-    
-    public static func inflate(_ compressedCoordinate: CompressedCoordinate) -> (latitude: Double, longitude: Double) {
-        var lat: Double = 0
-        var lon: Double = 0
-        
-        _coordinateKitInflateCoordinate(compressedCoordinate, &lat, &lon)
-        
-        return (lat, lon)
-    }
-}
+public typealias CompressedCoordinate = UInt64

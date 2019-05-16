@@ -32,8 +32,8 @@ import CoreLocation
 extension Coordinate {
     
     public static func deflate(coordinatesToData coordinates: [CLLocationCoordinate2D]) -> Data {
-        let values: [UInt64] = self.deflate(coordinates: coordinates)
-        var buffer: Data     = Data()
+        let values: [CompressedCoordinate] = self.deflate(coordinates: coordinates)
+        var buffer: Data = Data()
         
         values.withUnsafeBytes { bytes in
             for var byte in bytes {
@@ -51,7 +51,7 @@ extension Coordinate {
         
         
         return data.withUnsafeBytes { buffer in
-            buffer.bindMemory(to: UInt64.self).map {
+            buffer.bindMemory(to: CompressedCoordinate.self).map {
                 Coordinate.inflate(coordinate: $0)
             }
         }

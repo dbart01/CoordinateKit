@@ -17,6 +17,7 @@
 		9A57DD20228D7AF70003BBEB /* CoordinateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A57DD1F228D7AF70003BBEB /* CoordinateTests.swift */; };
 		9A57DD22228D7BDE0003BBEB /* Coordinate+CoreLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A57DD21228D7BDE0003BBEB /* Coordinate+CoreLocationTests.swift */; };
 		9A57DD24228D7E640003BBEB /* Coordinate+DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A57DD23228D7E640003BBEB /* Coordinate+DataTests.swift */; };
+		9A57DD26228D839C0003BBEB /* CompressedCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A57DD25228D839C0003BBEB /* CompressedCoordinate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		9A57DD1F228D7AF70003BBEB /* CoordinateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateTests.swift; sourceTree = "<group>"; };
 		9A57DD21228D7BDE0003BBEB /* Coordinate+CoreLocationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coordinate+CoreLocationTests.swift"; sourceTree = "<group>"; };
 		9A57DD23228D7E640003BBEB /* Coordinate+DataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coordinate+DataTests.swift"; sourceTree = "<group>"; };
+		9A57DD25228D839C0003BBEB /* CompressedCoordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompressedCoordinate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				9A57DCFA228CA3020003BBEB /* CoordinateKit.h */,
+				9A57DD25228D839C0003BBEB /* CompressedCoordinate.swift */,
 				9A57DD1B228CAC0A0003BBEB /* Coordinate.swift */,
 				9A57DD1D228CAC6D0003BBEB /* Coordinate+CoreLocation.swift */,
 				9A57DD19228CA3EB0003BBEB /* Coordinate+Data.swift */,
@@ -217,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A57DD1A228CA3EB0003BBEB /* Coordinate+Data.swift in Sources */,
+				9A57DD26228D839C0003BBEB /* CompressedCoordinate.swift in Sources */,
 				9A57DD1E228CAC6D0003BBEB /* Coordinate+CoreLocation.swift in Sources */,
 				9A57DD13228CA3230003BBEB /* deflator.c in Sources */,
 				9A57DD1C228CAC0A0003BBEB /* Coordinate.swift in Sources */,

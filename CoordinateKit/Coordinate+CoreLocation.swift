@@ -33,11 +33,11 @@ import CoreLocation
 
 extension Coordinate {
     
-    public static func deflate(coordinate: CLLocationCoordinate2D) -> UInt64 {
+    public static func deflate(coordinate: CLLocationCoordinate2D) -> CompressedCoordinate {
         return self.deflate(latitude: coordinate.latitude, longitude: coordinate.longitude)
     }
     
-    public static func inflate(coordinate: UInt64) -> CLLocationCoordinate2D {
+    public static func inflate(coordinate: CompressedCoordinate) -> CLLocationCoordinate2D {
         let (lat, lon) = self.inflate(coordinate)
         return CLLocationCoordinate2D(latitude: lat, longitude: lon)
     }
@@ -47,11 +47,11 @@ extension Coordinate {
 
 extension Coordinate {
     
-    public static func deflate(coordinates: [CLLocationCoordinate2D]) -> [UInt64] {
+    public static func deflate(coordinates: [CLLocationCoordinate2D]) -> [CompressedCoordinate] {
         return coordinates.map { self.deflate(coordinate: $0) }
     }
     
-    public static func inflate(coordinates: [UInt64]) -> [CLLocationCoordinate2D] {
+    public static func inflate(coordinates: [CompressedCoordinate]) -> [CLLocationCoordinate2D] {
         return coordinates.map { self.inflate(coordinate: $0) }
     }
 }

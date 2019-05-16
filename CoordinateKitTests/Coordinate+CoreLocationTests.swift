@@ -50,8 +50,8 @@ class Coordinate_CoreLocationTests: XCTestCase {
     }
     
     func testInflate() {
-        let value: UInt64 = 9637694487388404589
-        let coordinate    = Coordinate.inflate(coordinate: value)
+        let value: CompressedCoordinate = 9637694487388404589
+        let coordinate = Coordinate.inflate(coordinate: value)
         
         XCTAssertEqual(coordinate.latitude,   43.1234567, accuracy: 0.000001)
         XCTAssertEqual(coordinate.longitude, -79.8765432, accuracy: 0.000001)
@@ -60,7 +60,7 @@ class Coordinate_CoreLocationTests: XCTestCase {
     // MARK: - Collection -
     
     func testDeflateCollection() {
-        let collection: [UInt64] = Coordinate.deflate(coordinates: self.coordinates)
+        let collection: [CompressedCoordinate] = Coordinate.deflate(coordinates: self.coordinates)
         
         XCTAssertEqual(collection.count, 3)
         XCTAssertEqual(collection, [
@@ -71,7 +71,7 @@ class Coordinate_CoreLocationTests: XCTestCase {
     }
     
     func testInflateCollection() {
-        let compressedCoordinates: [UInt64] = [
+        let compressedCoordinates: [CompressedCoordinate] = [
             4181675139767712621,
             4249105988036180845,
             4261201715308641133,

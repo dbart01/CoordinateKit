@@ -43,7 +43,7 @@ class CoordinateTests: XCTestCase {
     // MARK: - Inflate -
     
     func testInflate() {
-        let value: UInt64 = 9637694487388404589
+        let value: CompressedCoordinate = 9637694487388404589
         let (latitude, longitude) = Coordinate.inflate(value)
         
         XCTAssertEqual(latitude,   43.1234567, accuracy: 0.000001)
