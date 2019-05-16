@@ -36,8 +36,36 @@ class CoordinateTests: XCTestCase {
         let latitude:  Double = 43.1234567
         let longitude: Double = -79.8765432
         
-        let value = Coordinate.deflate(latitude: latitude, longitude: longitude)
+        let value = try! Coordinate.deflate(latitude: latitude, longitude: longitude)
         XCTAssertEqual(value, 9637694487388404589)
+    }
+    
+    func testDeflateInvalidLatitude() {
+        let latitude:  Double = 110.1234567
+        let longitude: Double = -79.8765432
+        
+        do {
+            _ = try Coordinate.deflate(latitude: latitude, longitude: longitude)
+            XCTFail()
+        } catch Coordinate.Error.invalidLatitude {
+            XCTAssertTrue(true)
+        } catch {
+            XCTFail()
+        }
+    }
+    
+    func testDeflateInvalidLongitude() {
+        let latitude:  Double = 43.1234567
+        let longitude: Double = -205.8765432
+        
+        do {
+            _ = try Coordinate.deflate(latitude: latitude, longitude: longitude)
+            XCTFail()
+        } catch Coordinate.Error.invalidLongitude {
+            XCTAssertTrue(true)
+        } catch {
+            XCTFail()
+        }
     }
     
     // MARK: - Inflate -

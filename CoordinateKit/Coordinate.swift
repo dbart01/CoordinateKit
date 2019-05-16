@@ -29,7 +29,18 @@ import Foundation
 
 public enum Coordinate {
     
-    public static func deflate(latitude: Double, longitude: Double) -> CompressedCoordinate {
+    private static let rangeForLatitude  =  -90.0...90.0
+    private static let rangeForLongitude = -180.0...180.0
+    
+    public static func deflate(latitude: Double, longitude: Double) throws -> CompressedCoordinate {
+        guard self.rangeForLatitude.contains(latitude) else {
+            throw Error.invalidLatitude
+        }
+        
+        guard self.rangeForLongitude.contains(longitude) else {
+            throw Error.invalidLongitude
+        }
+        
         return _coordinateKitDeflateCoordinate(latitude, longitude)
     }
     
@@ -40,5 +51,14 @@ public enum Coordinate {
         _coordinateKitInflateCoordinate(compressedCoordinate, &lat, &lon)
         
         return (lat, lon)
+    }
+}
+
+// MARK: - Error -
+
+extension Coordinate {
+    public enum Error: Equatable, Swift.Error {
+        case invalidLatitude
+        case invalidLongitude
     }
 }

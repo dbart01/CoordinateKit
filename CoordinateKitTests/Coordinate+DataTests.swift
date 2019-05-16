@@ -42,7 +42,7 @@ class Coordinate_DataTests: XCTestCase {
     // MARK: - Data -
     
     func testDeflateToData() {
-        let data: Data = Coordinate.deflate(coordinatesToData: self.coordinates)
+        let data = try! Coordinate.deflate(coordinatesToData: self.coordinates)
         
         XCTAssertEqual(data.count, 24)
         XCTAssertEqual(data, self.coordinatesData)
@@ -64,7 +64,7 @@ class Coordinate_DataTests: XCTestCase {
     // MARK: - Base64 -
     
     func testDeflateToBase64() {
-        let base64 = Coordinate.deflate(coordinatesToBase64: self.coordinates)
+        let base64 = try! Coordinate.deflate(coordinatesToBase64: self.coordinates)
         
         XCTAssertEqual(base64, "bbvvV2JLCDptu+ElYtv3Om27QR1i1CI7")
     }

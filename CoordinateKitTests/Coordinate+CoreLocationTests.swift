@@ -45,7 +45,7 @@ class Coordinate_CoreLocationTests: XCTestCase {
             longitude: -79.8765432
         )
         
-        let value = Coordinate.deflate(coordinate: coordinate)
+        let value = try! Coordinate.deflate(coordinate: coordinate)
         XCTAssertEqual(value, 9637694487388404589)
     }
     
@@ -60,7 +60,7 @@ class Coordinate_CoreLocationTests: XCTestCase {
     // MARK: - Collection -
     
     func testDeflateCollection() {
-        let collection: [CompressedCoordinate] = Coordinate.deflate(coordinates: self.coordinates)
+        let collection: [CompressedCoordinate] = try! Coordinate.deflate(coordinates: self.coordinates)
         
         XCTAssertEqual(collection.count, 3)
         XCTAssertEqual(collection, [
